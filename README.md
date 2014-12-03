@@ -8,13 +8,13 @@ The RPM can be found here: [RPM](http://opencrowbar.s3-website-us-east-1.amazona
 
 Read this whole paragraph, please. 
 
-1. Follow the regular OpenCrowbar installation instructions at [here](https://github.com/opencrowbar/core/blob/master/doc/deployment-guide/Install-CentOS-RHEL-6.5-AdminNode.md).  But do not run the production.sh script (The last step)
+1. Follow the regular OpenCrowbar installation instructions at [here](https://github.com/opencrowbar/core/blob/master/doc/deployment-guide/Install-CentOS-RHEL-6.5-AdminNode.md).  But do _not_ run the production.sh script (The last step)
 
-2. wget http://opencrowbar.s3-website-us-east-1.amazonaws.com/rackn-packstack-2.0.0.9-1.noarch.rpm
+2. `wget http://opencrowbar.s3-website-us-east-1.amazonaws.com/rackn-packstack-2.0.0.9-1.noarch.rpm`
 
-3. yum install -y rackn-packstack-2.0.0.9-1.noarch.rpm
+3. `yum install -y rackn-packstack-2.0.0.9-1.noarch.rpm`
 
-4. NOW you can run production.sh.  /opt/opencrowbar/core/production.sh &lt;FQDN of the admin node&gt;
+4. NOW you can run production.sh.  `/opt/opencrowbar/core/production.sh &lt;FQDN of the admin node&gt;`
 
 # Use
 
@@ -40,8 +40,8 @@ and change to the *packstack-user*.  From this account, you can run
 packstack.
 
 Something like this could be used on a 3 node default setup:
-packstack --install-host=192.168.124.81,192.168.124.82,192.168.124.83
---use-epel=y --provision-demo=n
+`packstack --install-host=192.168.124.81,192.168.124.82,192.168.124.83
+--use-epel=y --provision-demo=n`
 
 ## Steps: 
 1. boot admin node (The "System" Deployment is complete)

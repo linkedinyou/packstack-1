@@ -14,7 +14,7 @@ Read this whole paragraph, please.
 
 3. `yum install -y rackn-packstack-2.0.0.9-1.noarch.rpm`
 
-4. NOW you can run production.sh.  `/opt/opencrowbar/core/production.sh &lt;FQDN of the admin node&gt;`
+4. NOW you can run production.sh.  `/opt/opencrowbar/core/production.sh` &lt;FQDN of the admin node&gt;
 
 # Use
 

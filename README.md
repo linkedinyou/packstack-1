@@ -2,22 +2,22 @@
 
 The Packstack workload for OpenCrowbar sets up an environment that can
 run packstack.
-The RPM can be found here: [RPM](http://opencrowbar.s3-website-us-east-1.amazonaws.com/rackn-packstack-2.0.0.10-1.noarch.rpm) if you would like to download it directly.
 
 # Install
 
 Read this whole paragraph, please. 
 
-1. Follow the regular OpenCrowbar installation instructions at [here](https://github.com/opencrowbar/core/blob/master/doc/deployment-guide/Install-CentOS-RHEL-6.5-AdminNode.md).  But do _not_ run the production.sh script (The last step)
+Read this whole paragraph, please. 
 
-2. `wget http://opencrowbar.s3-website-us-east-1.amazonaws.com/rackn-packstack-2.0.0.10-1.noarch.rpm`
+1. The install script takes the same parameters as the core opencrowbar install.sh script.  That can be found [here](https://github.com/opencrowbar/core/blob/master/doc/deployment-guide/Install-CentOS-RHEL-6.5-AdminNode.md).
 
-3. `yum install -y rackn-packstack-2.0.0.10-1.noarch.rpm`
+2. wget --no-check-certificate -O - https://raw.githubusercontent.com/rackn/packstack/master/tools/packstack-install.sh | source /dev/stdin
 
-4. NOW you can run production.sh.  
-`cd /opt/opencrowbar/core`
+3. Optional: You may run other opencrowbar install scripts as needed. 
 
-`./production.sh` &lt;FQDN of the admin node&gt;
+4. cd /opt/opencrowbar/core/
+
+5. ./production.sh &lt;FQDN of the admin node&gt;
 
 # Use
 

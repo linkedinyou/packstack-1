@@ -6,7 +6,7 @@
 # Setup RackN public repo
 cd /etc/yum.repos.d
 cat > rackn_public.repo <<EOF
-[ocb]
+[racknpublic]
 name=repo for rackn public rpms
 baseurl=https://s3.amazonaws.com/rackn/public/el6
 enabled=1

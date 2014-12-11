@@ -8,7 +8,7 @@ cd /etc/yum.repos.d
 cat > rackn_public.repo <<EOF
 [racknpublic]
 name=repo for rackn public rpms
-baseurl=https://s3.amazonaws.com/rackn/public/el6
+baseurl=http://rackn.s3-website-us-east-1.amazonaws.com/public/el6
 enabled=1
 gpgcheck=0
 type=none

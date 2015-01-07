@@ -5,7 +5,7 @@
 
 TREE="master"
 REPO="el6"
-if [ "$1" == "--develop"]; then
+if [ "$1" == "--develop" ]; then
   TREE="develop"
   REPO="el6" # One day support develop
 fi

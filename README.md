@@ -7,9 +7,9 @@ run packstack.
 
 Read this whole paragraph, please. 
 
-1. The install script takes the same parameters as the core opencrowbar install.sh script.  That can be found [here](https://github.com/opencrowbar/core/blob/master/doc/deployment-guide/Install-CentOS-RHEL-6.5-AdminNode.md).
+1. The install script takes the same parameters as the core opencrowbar install.sh script.  That can be found [here](https://github.com/opencrowbar/core/blob/develop/doc/deployment-guide/Install-CentOS-RHEL-6.5-AdminNode.md).
 
-2. wget --no-check-certificate -O - https://raw.githubusercontent.com/rackn/packstack/master/tools/packstack-install.sh | source /dev/stdin
+2. `wget --no-check-certificate -O - https://raw.githubusercontent.com/rackn/packstack/develop/tools/packstack-install.sh | source /dev/stdin`
 
 3. Optional: You may run other opencrowbar install scripts as needed. 
 

@@ -12,7 +12,7 @@ elif [[ $1 = '--master' ]]; then
   REPO="el6"
 elif [[ $1 = '--release' ]]; then
   TREE="release/$2"
-  REPO="release/$2"
+  REPO="el6"
 else
   TREE="master"
   REPO="el6"

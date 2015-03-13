@@ -3,11 +3,19 @@
 # Copyright 2014, Greg Althaus
 #
 
-TREE="master"
-REPO="el6"
-if [ "$1" == "--develop" ]; then
+# Get release requested
+if [[ $1 = '--develop' ]]; then
   TREE="develop"
-  REPO="el6" # One day support develop
+  REPO="el6"
+elif [[ $1 = '--master' ]]; then
+  TREE="master"
+  REPO="el6"
+elif [[ $1 = '--release' ]]; then
+  TREE="release/$2"
+  REPO="release/$2"
+else
+  TREE="master"
+  REPO="el6"
 fi
 
 # Setup RackN public repo

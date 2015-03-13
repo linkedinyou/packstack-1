@@ -6,7 +6,7 @@
 <title>
   File: README
   
-    &mdash; Documentation by YARD 0.8.7.4
+    &mdash; Documentation by YARD 0.8.7.6
   
 </title>
 
@@ -67,6 +67,27 @@
 <p>The Packstack workload for OpenCrowbar sets up an environment that can run
 packstack.</p>
 
+<h1 id="label-Install">Install</h1>
+
+<p>Read this whole paragraph, please.</p>
+<ol><li>
+<p>The install script takes the same parameters as the core opencrowbar
+install.sh script. That can be found <a
+href="https://github.com/opencrowbar/core/blob/develop/doc/deployment-guide/Install-CentOS-RHEL-6.6-AdminNode.md">here</a>.</p>
+</li><li>
+<p><code>wget --no-check-certificate -O -
+https://raw.githubusercontent.com/rackn/packstack/develop/tools/packstack-install.sh
+| source /dev/stdin --develop</code></p>
+</li><li>
+<p>Optional: You may run other opencrowbar install scripts as needed.</p>
+</li><li>
+<p>cd /opt/opencrowbar/core/</p>
+</li><li>
+<p>./production.sh &lt;FQDN of the admin node&gt;</p>
+</li></ol>
+
+<h1 id="label-Use">Use</h1>
+
 <p>The <em>packstack-installer</em> role can be added to nodes to generate a
 place to run packstack. The <em>packstack-client</em> role can be added to
 nodes to indicate a node that should participate in the packstack
@@ -88,48 +109,49 @@ network-manager disabled is present.</p>
 node and change to the <em>packstack-user</em>. From this account, you can
 run packstack.</p>
 
-<p>Something like this could be used on a 3 node default setup: packstack
-–install-host=192.168.124.81,192.168.124.82,192.168.124.83 –use-epel=y
-–provision-demo=n</p>
+<p>Something like this could be used on a 3 node default setup:
+<code>packstack --install-host=192.168.124.81,192.168.124.82,192.168.124.83
+--use-epel=y --provision-demo=n</code></p>
 
 <h2 id="label-Steps%3A">Steps:</h2>
 <ol><li>
-<p>boot admin node</p>
+<p>boot admin node (The “System” Deployment is complete)</p>
 </li><li>
-<p>Once admin node is ready, start 3-5 KVM machines.</p>
+<p>Once admin node is ready, start 3-5 Nodes.</p>
 </li><li>
-<p>start 6 VMs: <code>for j in 1 2 3 4 5 6; do tools/kvm-slave &amp;
-done</code></p>
-</li><li>
-<p>Once these are discovered, use the ready-state wizard to set the following</p>
+<p>Once these are discovered, (show green in the system deployment) use the
+ready-state wizard to set the following</p>
 </li><li>
 <p>OS to centos7</p>
 </li><li>
-<p>Nothing else. Press apply.</p>
+<p>Ensure that the Network is how you would like it set up.</p>
 </li><li>
-<p>This takes you to the deploment screen. DO NOT COMMIT</p>
+<p>Click “Run Wizard”</p>
+</li><li>
+<p>This takes you to the deploment screen. <em>DO NOT COMMIT</em></p>
 </li><li>
 <p>Go to the pilot deployment.</p>
 </li><li>
 <p>Add roles, OpenStack (PackStack)</p>
 </li><li>
-<p>Add Packstack to your controller node - it will add packstack-installer
-&amp; client</p>
+<p>Add Packstack to your controller node (Click on the +) - it will add
+packstack-installer &amp; client</p>
 </li><li>
 <p>Edit the packstack-installer to choose your OpenStack release</p>
 </li><li>
-<p>Add Packstack the result of your nodes - it will only add packstack-client</p>
+<p>Add Packstack the rest of your nodes - it will only add packstack-client</p>
 </li><li>
 <p>Commit deployment</p>
 </li></ol>
 
 <p>Wait while everything happens - all node roles will be green at end.</p>
 <ol><li>
-<p>Once done, get on the packstack-installer node.</p>
+<p>Once done, onto the packstack-installer node.</p>
 </li><li>
 <p>on admin,</p>
 <ol><li>
-<p><code>sudo ip a add 192.168.124.2/24 dev docker0</code></p>
+<p><code>sudo ip a add 192.168.124.2/24 dev docker0</code> <em>ONLY NEEDED IF
+YOU ARE RUNNING IN DOCKER CONTAINERS</em></p>
 </li><li>
 <p><code>su - crowbar</code></p>
 </li><li>
@@ -141,7 +163,7 @@ the packstack installer)</p>
 <ol><li>
 <p><code>su - packstack</code></p>
 </li><li>
-<p><code>packstack --install-host=192.168.124.81,192.168.124.82,192.168.124.83
+<p><code>packstack --install-host=&amp;lt;IP Addresses of your systems&amp;gt;
 --use-epel=y --provision-demo=n</code></p>
 </li><li>
 <p>That command is for three nodes. It will install icehouse nova with
@@ -152,7 +174,8 @@ the packstack installer)</p>
 <p>Wait for puppet installs to complete</p>
 <ol><li>
 <p>Attach your desktop to the docker bridge: <code>sudo ip a add
-192.168.124.2/24 dev docker0</code></p>
+192.168.124.2/24 dev docker0</code> <em>ONLY NEEDED IF YOU ARE RUNNING IN
+DOCKER CONTAINERS</em></p>
 </li><li>
 <p>Get the credentials for your installation</p>
 </li><li>
@@ -165,15 +188,12 @@ compute node)</p>
 </li><li>
 <p>login using admin/credentials</p>
 </li></ol>
-
-<p>When you are done, <code>for j in 1 2 3 4 5 6; do kill %$j ; done</code> to
-remove the VMs</p>
 </div></div>
 
     <div id="footer">
-  Generated on Mon Nov  3 15:05:57 2014 by
+  Generated on Fri Mar 13 01:25:18 2015 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.8.7.4 (ruby-2.1.2).
+  0.8.7.6 (ruby-2.1.5).
 </div>
 
   </body>

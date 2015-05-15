@@ -1,5 +1,5 @@
-- value = Attrib.get(attrib.name, obj) || 'juno'
-- releases = {"Icehouse (Spring 2014)"=>'icehouse', "Juno (Fall 2014)"=>'juno'}
+- value = Attrib.get(attrib.name, obj) || 'kilo'
+- releases = {"Icehouse (Spring 2014)"=>'icehouse', "Juno (Fall 2014)"=>'juno', "Kilo (Spring 2015)"=>'kilo'}
 = form_for :attrib, :remote => true, :url => attribs_api_path(:id=>attrib.id, obj_type=>obj.id, :version=>'v2'), :html => { :method=>:put, :'data-type' => 'html',  :class => "formtastic" } do |f|
   %tr
     %td= link_to attrib.name_i18n, attrib_path(attrib.id), :title=>attrib.description

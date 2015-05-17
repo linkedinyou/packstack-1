@@ -1,5 +1,7 @@
 # Packstack Barclamp for OpenCrowbar #
 
+[![Join the chat at https://gitter.im/rackn/packstack](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rackn/packstack?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 The Packstack workload for OpenCrowbar sets up an environment that can
 run packstack.
 

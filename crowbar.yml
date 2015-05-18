@@ -4,10 +4,10 @@ barclamp:
   license: "apache2"
   copyright: "Greg Althaus 2014"
   os_support:
-    - centos-6.5
-    - redhat-6.5
-    - centos-7.0
-    - redhat-7.0
+    - centos-6.6
+    - redhat-6.6
+    - centos-7.1.1503
+    - redhat-7.1
 
 roles:
   - name: packstack-installer

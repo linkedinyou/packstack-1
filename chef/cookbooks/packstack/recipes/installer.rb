@@ -19,6 +19,8 @@ rel = (node["packstack"]["openstack_release"] rescue nil)
 case rel
 when "trunk"
   packstack_source = "http://rdo.fedorapeople.org/rdo-release.rpm"
+when "kilo"
+  packstack_source = "https://repos.fedorapeople.org/repos/openstack/openstack-kilo-1/rdo-release-kilo-1.noarch.rpm"
 when "juno"
   packstack_source = "https://repos.fedorapeople.org/repos/openstack/openstack-juno/rdo-release-juno-1.noarch.rpm"
 when "icehouse"
